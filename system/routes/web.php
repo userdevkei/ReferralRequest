@@ -32,3 +32,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
+Route::get('/Facilitieslist', [FacilitiesController::class, 'facilitiestable']);
