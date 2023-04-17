@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Facilities;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -55,7 +56,12 @@ class UserController extends Controller
     }
 
     public function admin(){
-        return view('admin.index');
+        // $patients = Patients::count();
+        // $physicians = Physicians::count();
+        // $referals = Referals::count();
+        // $referalfeedback = Referalfeedback::count();
+        $facilities = Facilities::count();
+        return view('admin.index', compact('facilities'));
     }
 
     public function doctor(){
